@@ -1,0 +1,44 @@
+@page "/suggest"
+
+
+<h1>Suggest something</h1>
+
+
+ 
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Suggest</span>
+  </div>
+  <input type="text" @bind="val"  placeholder="Suggest Something!" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+</div>
+
+<p>Please think before you send your suggestions. You will get a chance to review all your suggestions before sending them (:</p>
+
+
+<button @onclick="GenerateMessages" class="btn btn-primary">Add Suggestion</button>
+
+
+<ul>
+    @foreach (var message in _messages)
+    {
+        <li>@message</li>
+    }
+</ul>
+
+
+@code {
+    private List<string> _messages = new List<string>();
+
+    String val="";
+    
+    public async Task GenerateMessages()
+    {
+        if(val==""){
+
+        }else{
+        _messages.Add(val);
+        val="";
+        }
+        
+    }    
+}

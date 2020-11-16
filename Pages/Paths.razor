@@ -1,0 +1,26 @@
+@page "/paths"
+ 
+@code{
+    private String course1="one";
+
+ }
+
+<h1>Paths</h1>
+
+
+<li>
+@course1
+</li>
+
+<p style="border:2px solid black;padding:30px;">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
